@@ -22,21 +22,21 @@ services:
 
             $gateways:
                 Facebook:
-                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/Facebook/Gateway
+                    gateway: RmAuthenticatorBundle\Authenticator\Gateways\Facebook\Gateway
                     options:
-                        app_id: ""
-                        secret: ""
+                        app_id: "test123"
+                        secret: "test123"
                         default_graph_version: "v2.10"
                 Twitter:
-                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/Twitter/Gateway
+                    gateway: RmAuthenticatorBundle\Authenticator\Gateways\Twitter\Gateway
                     options:
-                        client_id: ""
-                        secret: ""
-                        consumer_key: ""
-                        consumer_secret: ""
+                        client_id: "test123"
+                        secret: "test123"
+                        consumer_key: "test123"
+                        consumer_secret: "test123"
                 GitHub:
-                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/GitHub/Gateway
+                    gateway: RmAuthenticatorBundle\Authenticator\Gateways\GitHub\Gateway
                     options:
-                        client_id: ""
-                        secret: ""
+                        client_id: "test123"
+                        secret: "test123"
 
