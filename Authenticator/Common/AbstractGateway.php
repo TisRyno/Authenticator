@@ -9,6 +9,20 @@ use Psr\Log\LoggerInterface;
 use GuzzleHttp\Client;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * Class AbstractGateway
+ *
+ * The Abstract Gateway is the standardisation of all Gateways
+ *
+ * This class is built to take all the settings and parameters
+ * and store them in a standardised way to ensure all code is consistent.
+ *
+ * It also adds a layer of validity to each Gateway.
+ *
+ * For each action applied to a Gateway a 'Supports' function should exist.
+ *
+ * @package RmAuthenticatorBundle\Authenticator\Common
+ */
 abstract class AbstractGateway implements GatewayInterface
 {
     /**
