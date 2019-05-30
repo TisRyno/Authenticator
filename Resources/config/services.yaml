@@ -24,13 +24,16 @@ services:
                 Facebook:
                     gateway: RmAuthenticatorBundle/Authenticator/Gateways/Facebook/Gateway
                     options:
-                        client_id: ""
+                        app_id: ""
                         secret: ""
+                        default_graph_version: "v2.10"
                 Twitter:
                     gateway: RmAuthenticatorBundle/Authenticator/Gateways/Twitter/Gateway
                     options:
                         client_id: ""
                         secret: ""
+                        consumer_key: ""
+                        consumer_secret: ""
                 GitHub:
                     gateway: RmAuthenticatorBundle/Authenticator/Gateways/GitHub/Gateway
                     options:

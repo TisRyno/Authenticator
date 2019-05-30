@@ -31,6 +31,12 @@ abstract class AbstractGateway
      */
     const DEBUG_FORMAT = ">>>>>>>>\n{method} {uri} HTTP/{version} {req_body}\n<<<<<<<<\nRESPONSE: {code} - {res_body}\n--------\n{error}\n";
 
+    /**
+     * AbstractGateway constructor.
+     *
+     * @param LoggerInterface $logger
+     * @param array $parameters
+     */
     public function __construct(LoggerInterface $logger, $parameters = [])
     {
         $this->logger = $logger;
@@ -98,7 +104,7 @@ abstract class AbstractGateway
             $str
         );
     }
-    
+
     /**
      * @return array
      */
