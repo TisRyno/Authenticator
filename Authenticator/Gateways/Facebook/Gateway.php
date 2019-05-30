@@ -2,7 +2,6 @@
 namespace RmAuthenticatorBundle\Authenticator\Gateways\Facebook;
 
 use Facebook\Facebook;
-use Psr\Log\LoggerInterface;
 use RmAuthenticatorBundle\Authenticator\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
@@ -11,19 +10,6 @@ class Gateway extends AbstractGateway
      * @var Facebook
      */
     protected $facebookClient;
-
-    /**
-     * Gateway constructor.
-     *
-     * @param LoggerInterface $logger
-     * @param array $parameters
-     */
-    public function __construct(LoggerInterface $logger, $parameters = [])
-    {
-        parent::__construct($logger, $parameters);
-
-        $this->createConnection();
-    }
 
     /**
      * Creates the default connection to Facebook

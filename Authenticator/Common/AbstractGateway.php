@@ -9,7 +9,7 @@ use Psr\Log\LoggerInterface;
 use GuzzleHttp\Client;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
-abstract class AbstractGateway
+abstract class AbstractGateway implements GatewayInterface
 {
     /**
      * @var LoggerInterface
@@ -45,6 +45,7 @@ abstract class AbstractGateway
         $this->initialiseParameters($parameters);
 
         $this->createDefaultHttpClient();
+        $this->createConnection();
     }
 
     /**
@@ -69,8 +70,6 @@ abstract class AbstractGateway
 
     /**
      * Create the global default HTTP client with relevant settings
-     *
-     * @return HttpClient
      */
     protected function createDefaultHttpClient()
     {
