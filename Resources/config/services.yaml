@@ -1,0 +1,39 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    RmAuthenticatorBundle\:
+        resource: '../../../../src/RmAuthenticatorBundle/*'
+        exclude: '../../../../src/RmAuthenticatorBundle/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    RmAuthenticatorBundle\Controller\:
+        resource: '../../../../src/RmAuthenticatorBundle/Controller'
+        tags: ['controller.service_arguments']
+
+    RmAuthenticatorBundle\Authenticator\Factory:
+        class: RmAuthenticatorBundle\Authenticator\Factory
+        arguments:
+            $settings:
+                sandbox: true
+                default: Facebook
+
+            $gateways:
+                Facebook:
+                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/Facebook/Gateway
+                    options:
+                        client_id: ""
+                        secret: ""
+                Twitter:
+                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/Twitter/Gateway
+                    options:
+                        client_id: ""
+                        secret: ""
+                GitHub:
+                    gateway: RmAuthenticatorBundle/Authenticator/Gateways/GitHub/Gateway
+                    options:
+                        client_id: ""
+                        secret: ""
+
