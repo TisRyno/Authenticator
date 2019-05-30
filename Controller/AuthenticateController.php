@@ -10,8 +10,17 @@ class AuthenticateController extends AbstractController
     public function index(Request $request, Factory $factory)
     {
         $request->request->get('gateway');
-        dump($factory->create('Facebook'));
 
-        return $this->render('@RmAuthenticatorBundle/index.html.twig');
+        $facebookFactory = $factory->create('Facebook');
+
+        $twitterFactory = $factory->create('Twitter');
+
+        $gitHubFactory = $factory->create('GitHub');
+
+        return $this->render('@RmAuthenticatorBundle/index.html.twig', [
+            'facebookSupport' => $facebookFactory->supportsFetchUserData(),
+            'twitterSupport' => $twitterFactory->supportsFetchUserData(),
+            'gitHubSupport' => $gitHubFactory->supportsFetchUserData(),
+        ]);
     }
 }

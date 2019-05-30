@@ -22,4 +22,9 @@ class Gateway extends AbstractGateway
             'default_graph_version' => $this->getParameter('default_graph_version'),
         ]);
     }
+
+    public function fetchUserData()
+    {
+
+    }
 }
