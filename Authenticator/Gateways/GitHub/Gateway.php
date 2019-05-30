@@ -1,5 +1,5 @@
 <?php
-namespace App\RmAuthenticatorBundle\Authenticator\Gateways\GitHub;
+namespace RmAuthenticatorBundle\Authenticator\Gateways\GitHub;
 
 use RmAuthenticatorBundle\Authenticator\Common\AbstractGateway;
 

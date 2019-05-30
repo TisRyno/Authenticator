@@ -1,5 +1,5 @@
 <?php
-namespace App\RmAuthenticatorBundle\Authenticator\Gateways\Facebook;
+namespace RmAuthenticatorBundle\Authenticator\Gateways\Facebook;
 
 use RmAuthenticatorBundle\Authenticator\Common\AbstractGateway;
 

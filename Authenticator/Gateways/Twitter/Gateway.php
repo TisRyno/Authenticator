@@ -1,5 +1,5 @@
 <?php
-namespace App\RmAuthenticatorBundle\Authenticator\Gateways\Twitter;
+namespace RmAuthenticatorBundle\Authenticator\Gateways\Twitter;
 
 use RmAuthenticatorBundle\Authenticator\Common\AbstractGateway;
 
