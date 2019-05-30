@@ -98,4 +98,50 @@ abstract class AbstractGateway
             $str
         );
     }
+    
+    /**
+     * @return array
+     */
+    public function getParameters()
+    {
+        return $this->parameters->all();
+    }
+
+    /**
+     * @param  string $key
+     * @return mixed
+     */
+    public function getParameter($key)
+    {
+        return $this->parameters->get($key);
+    }
+
+    /**
+     * @param  string $key
+     * @param  mixed  $value
+     * @return $this
+     */
+    public function setParameter($key, $value)
+    {
+        $this->parameters->set($key, $value);
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getSandbox()
+    {
+        return $this->getParameter('sandbox');
+    }
+
+    /**
+     * @param  boolean $value
+     * @return $this
+     */
+    public function setSandbox($value)
+    {
+        return $this->setParameter('sandbox', $value);
+    }
 }
