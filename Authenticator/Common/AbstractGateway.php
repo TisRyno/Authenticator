@@ -149,4 +149,14 @@ abstract class AbstractGateway implements GatewayInterface
     {
         return $this->setParameter('sandbox', $value);
     }
+
+    /**
+     * Check to see if the Gateway supports fetching User Data
+     *
+     * @return bool
+     */
+    public function supportsFetchUserData()
+    {
+        return method_exists($this, 'fetchUserData');
+    }
 }
